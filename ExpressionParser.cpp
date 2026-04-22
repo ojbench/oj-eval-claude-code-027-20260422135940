@@ -21,7 +21,7 @@ std::vector<Token> tokenize(const std::string& input) {
         } else if (std::isalpha(input[i])) {
             std::string val;
             while (i < input.size() && std::isalnum(input[i])) {
-                val += input[i++];
+                val += static_cast<char>(std::toupper(input[i++]));
             }
             tokens.push_back({TokenType::IDENTIFIER, val});
         } else if (input[i] == '+') {

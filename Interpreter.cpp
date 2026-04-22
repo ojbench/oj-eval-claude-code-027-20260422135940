@@ -97,6 +97,7 @@ void Interpreter::executeStatement(const std::string& statement) {
         if (upperCmd == "LET") {
             std::string varName;
             ss >> varName;
+            std::transform(varName.begin(), varName.end(), varName.begin(), ::toupper);
             std::string remaining;
             std::getline(ss, remaining);
             size_t eqPos = remaining.find('=');
@@ -114,6 +115,7 @@ void Interpreter::executeStatement(const std::string& statement) {
         } else if (upperCmd == "INPUT") {
             std::string varName;
             ss >> varName;
+            std::transform(varName.begin(), varName.end(), varName.begin(), ::toupper);
             long long val;
             if (!(std::cin >> val)) {
                 std::cin.clear();

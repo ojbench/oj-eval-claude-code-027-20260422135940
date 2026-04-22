@@ -1,0 +1,4 @@
+10 LET x = 1
+20 PRINT X
+RUN
+QUIT
